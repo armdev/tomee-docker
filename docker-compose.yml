@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+    
+  tomee:    
+    image: tomee                 
+    container_name: tomee   
+    volumes:
+     - /opt/tomee/logs/:/opt/tomee/logs
+    ports:
+     - '9595:8080'  
+    networks:
+     - socnet
+
+networks:
+  socnet:
+    driver: bridge
